@@ -1,0 +1,17 @@
+<html>  
+  <body>
+  	<h1>Welcome to World of Networking</h1>
+  	<div>
+      {{ user }}
+      {% if user.is_anonymous %}
+      <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+      {% else %}
+      <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+      {% endif %}
+    </div>
+  	
+    {% block content %}
+    {% endblock %}  
+    <h2>Thanks</h2>  
+  </body>
+</html>
